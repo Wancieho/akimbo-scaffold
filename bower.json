@@ -1,0 +1,10 @@
+{
+  "name": "akimbo-scaffold",
+  "version": "0.0.1",
+  "main": "",
+  "ignore": [],
+  "devDependencies": {
+    "Akimbo": "akimbo#^0.0.1",
+    "jQuery": "2"
+  }
+}
