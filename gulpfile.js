@@ -4,10 +4,27 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 
 gulp.task('default', [
+	'clean',
 	'build'
 ]);
 
-gulp.task('build', function () {
+gulp.task('clean', function () {
+	return del([
+		'dist'
+	]);
+});
+
+gulp.task('jquery', ['clean'], function () {
+	return gulp.src('bower_components/akimbo/dist/akimbo.min.js')
+			.pipe(gulp.dest('dist/src/js'));
+});
+
+gulp.task('akimbo', ['clean'], function () {
+	return gulp.src('bower_components/jquery/dist/jquery.min.js')
+			.pipe(gulp.dest('dist/src/js'));
+});
+
+gulp.task('build', ['jquery', 'akimbo'], function () {
 	var html = gulp.src(['src/**/*.html', '!src/index.html'])
 			.pipe(gulp.dest('dist/src'));
 
@@ -17,7 +34,7 @@ gulp.task('build', function () {
 	var app = gulp.src('src/**/*.js')
 			.pipe(concat('app.min.js'))
 			.pipe(uglify())
-			.pipe(gulp.dest('dist'));
+			.pipe(gulp.dest('dist/src/js'));
 });
 
 gulp.task('watch', function () {
