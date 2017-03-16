@@ -1,18 +1,8 @@
 (function (akimbo) {
-	akimbo.App.Config.Routes = Routes;
-
-	var routes = [
+	akimbo.App.Config.routes = [
 		{
 			path: '',
 			controller: 'HelloController'
 		}
 	];
-
-	function Routes() {}
-
-	Routes.prototype = {
-		get: function () {
-			return routes;
-		}
-	};
 })(akimbo);
