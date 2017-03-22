@@ -4,7 +4,7 @@
   "main": "",
   "ignore": [],
   "devDependencies": {
-    "jQuery": "2",
-    "akimbo": "0.0.4"
+    "jQuery": "1",
+    "akimbo": "0.0.5"
   }
 }
